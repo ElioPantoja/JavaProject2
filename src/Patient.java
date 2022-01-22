@@ -3,9 +3,9 @@ public class Patient {
     String name;
     String email;
     String address;
-    String phoneNumber;
+    private String phoneNumber;
     String birthday;
-    double weight;
+    private double weight;
     private double height;
     String blood;
 
