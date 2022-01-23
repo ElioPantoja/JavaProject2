@@ -1,20 +1,29 @@
-public class Patient {
-    int id;
-    String name;
-    String email;
-    String address;
-    private String phoneNumber;
-    String birthday;
+public class Patient extends User{
+    //atributos
+    private String birthday;
     private double weight;
     private double height;
-    String blood;
+    private String blood;
 
 //Aca se definen los params obligatorios para crear el objeto
     Patient(String name, String email){
-        this.name = name;
-        this.email = email;
+        super(name,email);
+
     }
 
+    public String getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
+    }
+    public String getWeight() {
+        return this.weight + " cm";
+    }
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
     //setter
     public void setHeight(double height){
         this.height = height;
@@ -24,26 +33,14 @@ public class Patient {
         return this.height + " Kg.";
     }
 
-    public String getWeight() {
-        return this.weight + " cm";
-    }
-    public void setWeight(double weight) {
-        this.weight = weight;
+    public String getBlood() {
+        return blood;
     }
 
-
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public void setBlood(String blood) {
+        this.blood = blood;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        if(phoneNumber.length()>8){
-            System.out.println("Ingrese un numero valido");
-        }
-        else if (phoneNumber.length()>=8){
-            this.phoneNumber = phoneNumber;
-        }
 
-    }
 }
 

@@ -2,30 +2,25 @@ import java.util.ArrayList;
 import java.util.Date;
 
 //atribs
-public class Doctor {
-    static int id = 0;
-    private String name;
+public class Doctor extends User  {
     private String speciality;
     private String email;
 
-Doctor(){
-    System.out.println("Creando al nuevo Dr");
+Doctor(String name, String email){
+    super(name,email);
+    System.out.println("Creando al nuevo Dr " + name );
 }
 
-
-Doctor(String name, String speciality){
-    id++;
-    System.out.println("id del Dr:" + id);
-    this.name = name;
-    this.speciality = speciality;
-}
-
-//comportamientos
-    public void showName(){
-        System.out.println(name + " Especialidad: " + speciality);
+    public String getSpeciality() {
+        return speciality;
+    }
+    public void setSpeciality(String speciality) {
+        this.speciality = speciality;
     }
 
-//Arraylist
+
+    //*************** Arraylist ******************
+
     ArrayList<AvailableAppointment> availableAppointments = new ArrayList<>();
     public void addAvailableAppointment(Date date, String time){
         availableAppointments.add(new Doctor.AvailableAppointment(date,time));
@@ -34,8 +29,6 @@ Doctor(String name, String speciality){
     public ArrayList<AvailableAppointment> getAvailableAppointments(){
         return availableAppointments;
     }
-
-
 
     public static class AvailableAppointment{
         private int id;
@@ -58,7 +51,6 @@ Doctor(String name, String speciality){
         public Date getDate() {
             return date;
         }
-
         public void setDate(Date date) {
             this.date = date;
         }
@@ -66,7 +58,6 @@ Doctor(String name, String speciality){
         public String getTime() {
             return time;
         }
-
         public void setTime(String time) {
             this.time = time;
         }
