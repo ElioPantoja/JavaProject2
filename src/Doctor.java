@@ -9,6 +9,7 @@ public class Doctor extends User  {
 Doctor(String name, String email){
     super(name,email);
     System.out.println("Creando al nuevo Dr " + name );
+    this.speciality = speciality;
 }
 
     public String getSpeciality() {
@@ -18,6 +19,10 @@ Doctor(String name, String email){
         this.speciality = speciality;
     }
 
+    @Override
+    public String toString() {
+        return super.toString() +"\nSpeciality: " +speciality+ "\nAvailable: "+availableAppointments.toString();
+    }
 
     //*************** Arraylist ******************
 
@@ -29,7 +34,7 @@ Doctor(String name, String email){
     public ArrayList<AvailableAppointment> getAvailableAppointments(){
         return availableAppointments;
     }
-
+    //******Sub clase*************
     public static class AvailableAppointment{
         private int id;
         private Date date;
@@ -61,6 +66,11 @@ Doctor(String name, String email){
         public void setTime(String time) {
             this.time = time;
         }
+        @Override
+        public String toString() {
+            return "Available Appointments \nDate: " +date+ "\nTime: " + time;
+        }
     }
+
 
 }
