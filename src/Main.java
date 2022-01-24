@@ -22,7 +22,10 @@ public class Main {
             System.out.println(aA.getDate() + " " + aA.getTime());
         }
 
+        Patient patient = new Patient("Elio","elio.pantoja@outlook.com");
+        patient.setBlood("O+");
+        System.out.println(patient);
 
-        showMenu();
+        //showMenu();
     }
 }
