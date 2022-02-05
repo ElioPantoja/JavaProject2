@@ -1,4 +1,7 @@
-import static ui.UIMenu.*;
+import model.Doctor;
+import model.Patient;
+import model.User;
+
 import java.util.Date;
 
 public class Main {
@@ -6,12 +9,12 @@ public class Main {
 
         //declarando obj -- instanciando obj
 
-        /*Doctor dr1 = new Doctor();
+        /*model.Doctor dr1 = new model.Doctor();
         dr1.name = "Cosme Fulanito";
         dr1.speciality = "Pediatra";
         dr1.showName();
 
-        Doctor dr2 = new Doctor("Marcelo Barrientos", "Cirujano");*/
+        model.Doctor dr2 = new model.Doctor("Marcelo Barrientos", "Cirujano");*/
 
         Doctor myDoctor = new Doctor("Anahí Salgado", "Pediatria");
         myDoctor.addAvailableAppointment(new Date(), "4pm");
@@ -26,6 +29,8 @@ public class Main {
         patient.setBlood("O+");
         System.out.println(patient);
 
+        User user = new Doctor("Marcelo Barrientos", "mbar@gmail.com");
+        user.showDataUser();
         //showMenu();
     }
 }

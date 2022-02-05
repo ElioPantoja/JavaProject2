@@ -1,3 +1,5 @@
+package model;
+
 public class Patient extends User{
     //atributos
     private String birthday;
@@ -6,7 +8,7 @@ public class Patient extends User{
     private String blood;
 
 //Aca se definen los params obligatorios para crear el objeto
-    Patient(String name, String email){
+public Patient(String name, String email){
         super(name,email);
 
     }
@@ -45,6 +47,12 @@ public class Patient extends User{
     public String toString() {
         return super.toString()+ "\nAge: " +birthday+ "\nWeight: " +getWeight()+
                 "\nHeight " +getHeight()+ "\nBlood "+blood;
+    }
+
+    @Override
+    public void showDataUser() {
+        System.out.println("Paciente");
+        System.out.println("Historial");
     }
 }
 

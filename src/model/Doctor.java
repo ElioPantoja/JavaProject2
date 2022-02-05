@@ -1,3 +1,5 @@
+package model;
+
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -6,7 +8,7 @@ public class Doctor extends User  {
     private String speciality;
     private String email;
 
-Doctor(String name, String email){
+public Doctor(String name, String email){
     super(name,email);
     System.out.println("Creando al nuevo Dr " + name );
     this.speciality = speciality;
@@ -22,6 +24,12 @@ Doctor(String name, String email){
     @Override
     public String toString() {
         return super.toString() +"\nSpeciality: " +speciality+ "\nAvailable: "+availableAppointments.toString();
+    }
+
+    @Override
+    public void showDataUser() {
+        System.out.println("Hospital: Eva Peron");
+        System.out.println("Ciudad: Punta Alta");
     }
 
     //*************** Arraylist ******************
